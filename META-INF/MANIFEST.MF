@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mat-ext
+Bundle-SymbolicName: mat-ext;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.swt,
+ org.eclipse.jface,
+ org.eclipse.mat.api;bundle-version="1.13.0"
+Automatic-Module-Name: mat.ext
+Bundle-RequiredExecutionEnvironment: JavaSE-17
