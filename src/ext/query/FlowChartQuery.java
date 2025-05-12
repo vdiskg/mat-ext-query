@@ -16,6 +16,7 @@ import org.eclipse.mat.internal.snapshot.inspections.DominatorQuery;
 import org.eclipse.mat.query.IQuery;
 import org.eclipse.mat.query.IResult;
 import org.eclipse.mat.query.annotations.Argument;
+import org.eclipse.mat.query.annotations.CommandName;
 import org.eclipse.mat.query.results.CompositeResult;
 import org.eclipse.mat.query.results.TextResult;
 import org.eclipse.mat.snapshot.ISnapshot;
@@ -26,6 +27,7 @@ import org.eclipse.mat.util.IProgressListener;
 
 import ext.query.model.MergerTempFlowChartModel;
 
+@CommandName("ext_FlowChartQuery")
 public class FlowChartQuery implements IQuery {
     @Argument
     public ISnapshot snapshot;
