@@ -14,6 +14,7 @@ import java.util.TreeMap;
 
 import org.eclipse.mat.internal.snapshot.inspections.DominatorQuery;
 import org.eclipse.mat.query.IQuery;
+import org.eclipse.mat.query.IResult;
 import org.eclipse.mat.query.annotations.Argument;
 import org.eclipse.mat.query.results.CompositeResult;
 import org.eclipse.mat.query.results.TextResult;
@@ -21,17 +22,15 @@ import org.eclipse.mat.snapshot.ISnapshot;
 import org.eclipse.mat.snapshot.model.IClass;
 import org.eclipse.mat.snapshot.model.IObject;
 import org.eclipse.mat.snapshot.model.NamedReference;
-import org.eclipse.mat.query.IResult;
 import org.eclipse.mat.util.IProgressListener;
 
-import ext.query.model.ExtendAttributeModel;
 import ext.query.model.MergerTempFlowChartModel;
 
-public class ExtQuery implements IQuery {
+public class FlowChartQuery implements IQuery {
     @Argument
     public ISnapshot snapshot;
 
-	public ExtQuery() {
+	public FlowChartQuery() {
 	}
 
 	@Override
