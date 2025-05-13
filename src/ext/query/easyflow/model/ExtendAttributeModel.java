@@ -1,4 +1,4 @@
-package ext.query.model;
+package ext.query.easyflow.model;
 
 import java.util.Objects;
 import java.util.TreeMap;

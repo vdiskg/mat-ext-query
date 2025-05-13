@@ -6,7 +6,7 @@
             point="org.eclipse.mat.report.query">
 
         <query
-                impl="ext.query.FlowChartQuery">
+                impl="ext.query.easyflow.FlowChartQuery">
         </query>
 
     </extension>

@@ -1,4 +1,4 @@
-package ext.query;
+package ext.query.easyflow;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -17,6 +17,7 @@ import org.eclipse.mat.query.IQuery;
 import org.eclipse.mat.query.IResult;
 import org.eclipse.mat.query.annotations.Argument;
 import org.eclipse.mat.query.annotations.CommandName;
+import org.eclipse.mat.query.annotations.Name;
 import org.eclipse.mat.query.results.CompositeResult;
 import org.eclipse.mat.query.results.TextResult;
 import org.eclipse.mat.snapshot.ISnapshot;
@@ -25,9 +26,13 @@ import org.eclipse.mat.snapshot.model.IObject;
 import org.eclipse.mat.snapshot.model.NamedReference;
 import org.eclipse.mat.util.IProgressListener;
 
-import ext.query.model.MergerTempFlowChartModel;
+import ext.query.ConcurrentHashMapUtil;
+import ext.query.IObjectUtil;
+import ext.query.TreeMapUtil;
+import ext.query.easyflow.model.MergerTempFlowChartModel;
 
 @CommandName("ext_FlowChartQuery")
+@Name("ext_FlowChartQuery")
 public class FlowChartQuery implements IQuery {
     @Argument
     public ISnapshot snapshot;

@@ -1,5 +1,6 @@
 package ext.query;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -43,5 +44,13 @@ public class IObjectUtil {
 
     public static int[] objectIds(IObject... objects) {
        return objectIds(Arrays.asList(objects));
+    }
+
+    public static Collection<IObject> objects(int[] objectIds, ISnapshot snapshot) throws SnapshotException {
+        Collection<IObject> objects = new ArrayList<>();
+        for (int objectId : objectIds) {
+            objects.add(snapshot.getObject(objectId));
+        }
+        return objects;
     }
 }
