@@ -73,16 +73,22 @@ public class NettyBufQuery implements IQuery {
             listener.worked(i);
             String nettyBufClassName = entry.getKey();
             Collection<IObject> nettyBufObjects = entry.getValue();
-            int totalAlive = 0;
             int totalLength = 0;
+            int totalAlive = 0;
+            int totalAliveLength = 0;
             for (IObject nettyBufObject : nettyBufObjects) {
-                Integer length = NettyBufUtil.getLength(nettyBufClassName, nettyBufObject);
-                if (length != null) {
+                Integer length = NettyBufUtil.getLength(nettyBufClassName, nettyBufObject, false);
+                Objects.requireNonNull(length);
+                totalLength += length;
+
+                Integer aliveLength = NettyBufUtil.getLength(nettyBufClassName, nettyBufObject, true);
+                if (aliveLength != null) {
                     totalAlive++;
-                    totalLength += length;
+                    totalAliveLength += aliveLength;
                 }
             }
-            sb.append(MessageFormat.format("{0}: [count:{1}][alive:{2}][length:{3}]\n", nettyBufClassName, nettyBufObjects.size(), totalAlive, totalLength));
+            sb.append(MessageFormat.format("{0}: [count:{1}][length:{2}][alive:{3}][aliveLength:{4}]\n", nettyBufClassName, nettyBufObjects.size(), totalLength, totalAlive,
+                totalAliveLength));
         }
 
         return sb.toString();

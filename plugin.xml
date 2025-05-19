@@ -9,6 +9,10 @@
                 impl="ext.query.easyflow.FlowChartQuery">
         </query>
 
+        <query
+                impl="ext.query.netty.NettyBufQuery">
+        </query>
+
     </extension>
 
 </plugin>
